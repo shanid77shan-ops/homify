@@ -35,7 +35,7 @@ export default function Navbar() {
           className="group transition-opacity hover:opacity-90"
           onClick={handleNavClick}
         >
-          <Logo className="h-10 w-10 md:h-11 md:w-11" />
+          <Logo className="h-14 w-14 md:h-16 md:w-16" />
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">
