@@ -1,9 +1,11 @@
 import { Phone, MessageCircle } from 'lucide-react'
-import { contactPhones } from '../../data/content'
+import { contactPhones, getWhatsAppUrl } from '../../data/content'
 import MotionWrapper from '../ui/MotionWrapper'
 import Button from '../ui/Button'
 
 export default function ContactCTA() {
+  const consultationUrl = getWhatsAppUrl()
+
   return (
     <section className="section-padding bg-gradient-to-br from-brand-orange to-brand-orange-dark">
       <div className="container-wide">
@@ -21,7 +23,11 @@ export default function ContactCTA() {
               {contactPhones.map((phone) => (
                 <a
                   key={phone}
-                  href={`tel:+91${phone}`}
+                  href={getWhatsAppUrl(
+                    `Hi Team HOMEFY, I'd like to connect. (Reaching via +91 ${phone})`,
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-white/15 px-5 py-2.5 text-sm font-semibold backdrop-blur-sm transition-all hover:bg-white/25"
                 >
                   <Phone size={16} />
@@ -31,8 +37,10 @@ export default function ContactCTA() {
             </div>
 
             <Button
-              href="#contact"
+              href={consultationUrl}
               variant="outline"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-white/30 bg-white text-brand-orange hover:border-white hover:bg-orange-50 hover:text-brand-orange-dark"
             >
               <MessageCircle size={16} />

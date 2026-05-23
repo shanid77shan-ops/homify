@@ -130,4 +130,28 @@ export const processSteps = [
 export const contactPhones = ['8891778801', '8891778802', '8891776601']
 
 export const companyAddress =
-  'TEAM HOMEFY LLP, First Floor, Mahima Tower (Building No - M664/22G, 664H), Chettippadi Road, Moonniyur, Chelari, Malappuram, Kerala - 676317'
+  '1st Floor, Mahima Tower, Chettippadi Road, Chelari, Malappuram, Kerala 676317'
+
+export const companyLegalName = 'TEAM HOMEFY LLP'
+
+export const websiteUrl = 'https://homefy.in'
+
+export const businessHours = 'Mon – Sat: 9:00 AM – 6:00 PM · Sunday: Closed'
+
+export const mapsLink =
+  'https://www.google.com/maps/search/?api=1&query=1st+floor+Mahima+Tower+Chettippadi+road+Chelari+Kerala+676317'
+
+export const mapEmbedUrl =
+  'https://maps.google.com/maps?q=1st+floor+Mahima+Tower+Chettippadi+road+Chelari+Kerala+676317&z=16&output=embed'
+
+export const whatsappNumber = '918891778801'
+
+export const businessDisplayName = 'Team HOMEFY'
+
+export const chatAutoReply = `Thanks for reaching out to ${businessDisplayName}. We have received your message and will connect you with a team member shortly.`
+
+export function getWhatsAppUrl(message) {
+  const defaultMessage = `Hi ${businessDisplayName}, I'd like to get a free consultation.`
+  const text = message?.trim() || defaultMessage
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`
+}

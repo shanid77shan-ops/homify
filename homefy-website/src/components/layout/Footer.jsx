@@ -1,5 +1,13 @@
 import { Phone, MapPin, ArrowUpRight } from 'lucide-react'
-import { companyAddress, contactPhones, navLinks } from '../../data/content'
+import {
+  companyAddress,
+  companyLegalName,
+  contactPhones,
+  mapsLink,
+  navLinks,
+  websiteUrl,
+} from '../../data/content'
+import Logo from '../ui/Logo'
 
 export default function Footer() {
   return (
@@ -7,16 +15,9 @@ export default function Footer() {
       <div className="section-padding container-wide">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-16">
           <div>
-            <div className="mb-4 flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-orange text-sm font-bold">
-                H
-              </span>
-              <span className="text-xl font-bold">
-                TEAM <span className="text-brand-orange">HOMEFY</span>
-              </span>
-            </div>
-            <p className="mb-2 text-sm font-medium text-brand-orange">
-              Turning Houses into Homes
+            <Logo className="mb-4 h-10 w-auto" variant="light" />
+            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-slate-400">
+              {companyLegalName}
             </p>
             <p className="max-w-sm text-sm leading-relaxed text-slate-400">
               A diversified home solutions company committed to redefining modern living
@@ -30,7 +31,18 @@ export default function Footer() {
             </h3>
             <div className="flex gap-3">
               <MapPin className="mt-0.5 shrink-0 text-brand-orange" size={18} />
-              <p className="text-sm leading-relaxed text-slate-400">{companyAddress}</p>
+              <div>
+                <p className="text-sm leading-relaxed text-slate-400">{companyAddress}</p>
+                <a
+                  href={mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand-orange transition-colors hover:text-orange-300"
+                >
+                  Get directions
+                  <ArrowUpRight size={12} />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -58,7 +70,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
           <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} TEAM HOMEFY LLP. All rights reserved.
+            © {new Date().getFullYear()} {companyLegalName}. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             {navLinks.map((link) => (
@@ -70,6 +82,15 @@ export default function Footer() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-slate-500 transition-colors hover:text-brand-orange"
+            >
+              homefy.in
+              <ArrowUpRight size={12} />
+            </a>
             <a
               href="https://shophomefy.com"
               target="_blank"

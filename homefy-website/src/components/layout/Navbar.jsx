@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { navLinks } from '../../data/content'
+import { navLinks, getWhatsAppUrl } from '../../data/content'
 import Button from '../ui/Button'
+import Logo from '../ui/Logo'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -31,15 +32,10 @@ export default function Navbar() {
       <nav className="container-wide flex items-center justify-between px-5 py-4 md:px-8 lg:px-12">
         <a
           href="#home"
-          className="group flex items-center gap-2"
+          className="group transition-opacity hover:opacity-90"
           onClick={handleNavClick}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-orange text-sm font-bold text-white shadow-md shadow-brand-orange/30 transition-transform group-hover:scale-105">
-            H
-          </span>
-          <span className="text-lg font-bold tracking-tight text-charcoal">
-            TEAM <span className="text-brand-orange">HOMEFY</span>
-          </span>
+          <Logo className="h-9 w-auto md:h-10" />
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">
@@ -56,7 +52,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden lg:block">
-          <Button href="#contact" variant="primary">
+          <Button href={getWhatsAppUrl()} variant="primary" target="_blank" rel="noopener noreferrer">
             Get a Free Consultation
           </Button>
         </div>
@@ -86,7 +82,14 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-2">
-              <Button href="#contact" variant="primary" className="w-full" onClick={handleNavClick}>
+              <Button
+                href={getWhatsAppUrl()}
+                variant="primary"
+                className="w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+              >
                 Get a Free Consultation
               </Button>
             </li>

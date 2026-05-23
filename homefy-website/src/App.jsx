@@ -6,6 +6,8 @@ import BusinessSegments from './components/sections/BusinessSegments'
 import WhyChooseUs from './components/sections/WhyChooseUs'
 import ProcessTimeline from './components/sections/ProcessTimeline'
 import ContactCTA from './components/sections/ContactCTA'
+import LocationMap from './components/sections/LocationMap'
+import FloatingChatbot from './components/ui/FloatingChatbot'
 
 export default function App() {
   return (
@@ -17,9 +19,11 @@ export default function App() {
         <BusinessSegments />
         <WhyChooseUs />
         <ProcessTimeline />
+        <LocationMap />
         <ContactCTA />
       </main>
       <Footer />
+      <FloatingChatbot />
     </>
   )
 }
