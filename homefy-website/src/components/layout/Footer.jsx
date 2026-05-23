@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="section-padding container-wide">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-16">
           <div>
-            <Logo className="mb-5 h-20 w-20" variant="light" />
+            <Logo className="mb-6 h-32 w-32" />
             <p className="mb-2 text-xs font-medium uppercase tracking-wider text-slate-400">
               {companyLegalName}
             </p>

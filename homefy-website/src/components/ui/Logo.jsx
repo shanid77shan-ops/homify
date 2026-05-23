@@ -1,8 +1,5 @@
-export default function Logo({ className = 'h-16 w-16', variant = 'default' }) {
-  const imgClass =
-    variant === 'light'
-      ? `${className} object-contain brightness-0 invert`
-      : `${className} object-contain`
+export default function Logo({ className = 'h-20 w-20' }) {
+  const imgClass = `${className} object-contain`
 
   return (
     <img
