@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #f97316;
+  --color-brand-orange-dark: #ea580c;
+  --color-brand-orange-light: #fff7ed;
+  --color-slate-deep: #1e293b;
+  --color-charcoal: #0f172a;
+  --color-warm-gray: #f8f7f4;
+  --color-warm-gray-100: #f1f0ec;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-deep antialiased;
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    @apply bg-brand-orange/20 text-charcoal;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    @apply border-b border-white/20 bg-white/70 backdrop-blur-xl;
+  }
+
+  .section-padding {
+    @apply px-5 py-20 md:px-8 md:py-28 lg:px-12;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+}
