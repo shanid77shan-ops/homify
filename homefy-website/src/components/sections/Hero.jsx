@@ -60,7 +60,7 @@ export default function Hero() {
                   className="transition-transform group-hover:translate-x-1"
                 />
               </Button>
-              <Button href="#segments" variant="outline" className="group">
+              <Button href="#solar" variant="outline" className="group">
                 <Sun size={16} className="text-brand-orange" />
                 Switch to Solar
               </Button>
