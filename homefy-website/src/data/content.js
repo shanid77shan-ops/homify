@@ -144,8 +144,7 @@ export const mapsLink =
 export const mapEmbedUrl =
   'https://maps.google.com/maps?q=1st+floor+Mahima+Tower+Chettippadi+road+Chelari+Kerala+676317&z=16&output=embed'
 
-// Test WhatsApp number — update to production number when going live
-export const whatsappNumber = '918848133032'
+export const whatsappNumber = '918891778801'
 
 export const businessDisplayName = 'Team HOMEFY'
 
