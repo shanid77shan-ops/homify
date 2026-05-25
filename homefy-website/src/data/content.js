@@ -55,6 +55,24 @@ export const businessSegments = [
   },
 ]
 
+export const heroSlides = [
+  {
+    src: '/hero/interiors.jpg',
+    alt: 'Modern home interior design by Team HOMEFY',
+    label: 'Interiors',
+  },
+  {
+    src: '/hero/solar.png',
+    alt: 'Solar panel installation on a Kerala rooftop',
+    label: 'Solar',
+  },
+  {
+    src: '/hero/lifestyle.jpg',
+    alt: 'Home lifestyle and kitchen essentials',
+    label: 'Lifestyle',
+  },
+]
+
 export const solarSlides = [
   {
     src: '/solar/solar-1.png',
