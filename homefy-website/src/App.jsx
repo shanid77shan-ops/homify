@@ -3,6 +3,7 @@ import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
 import BusinessSegments from './components/sections/BusinessSegments'
+import SolarSection from './components/sections/SolarSection'
 import WhyChooseUs from './components/sections/WhyChooseUs'
 import ProcessTimeline from './components/sections/ProcessTimeline'
 import ContactCTA from './components/sections/ContactCTA'
@@ -17,6 +18,7 @@ export default function App() {
         <Hero />
         <About />
         <BusinessSegments />
+        <SolarSection />
         <WhyChooseUs />
         <ProcessTimeline />
         <LocationMap />

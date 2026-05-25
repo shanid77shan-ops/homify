@@ -66,7 +66,7 @@ export default function BusinessSegments() {
                       </a>
                     ) : (
                       <Button
-                        href="#contact"
+                        href={segment.id === 'power' ? '#solar' : '#contact'}
                         variant="ghost"
                         className="self-start px-0 text-brand-orange hover:bg-transparent hover:text-brand-orange-dark"
                       >

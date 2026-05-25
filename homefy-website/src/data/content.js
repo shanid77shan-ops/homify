@@ -55,6 +55,24 @@ export const businessSegments = [
   },
 ]
 
+export const solarSlides = [
+  {
+    src: '/solar/solar-1.png',
+    alt: 'HOMEFY solar team installing panels on a residential rooftop in Kerala',
+    caption: 'Expert rooftop solar installations across Kerala homes',
+  },
+  {
+    src: '/solar/solar-2.png',
+    alt: 'Professional solar panel installation and maintenance',
+    caption: 'Precision mounting, wiring, and quality-checked handover',
+  },
+  {
+    src: '/solar/solar-3.png',
+    alt: 'End-to-end solar installation process from rails to finished array',
+    caption: 'Complete process — survey, install, connect, and support',
+  },
+]
+
 export const whyChooseUs = [
   {
     title: 'Integrated Home Ecosystem',
