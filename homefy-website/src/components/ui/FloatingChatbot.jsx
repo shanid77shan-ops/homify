@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Send, Phone } from 'lucide-react'
+import { MessageCircle, X, Send } from 'lucide-react'
 import {
   businessDisplayName,
   chatAutoReply,
@@ -44,18 +44,6 @@ export default function FloatingChatbot() {
       e.preventDefault()
       handleSend()
     }
-  }
-
-  const handleQuickWhatsApp = () => {
-    const defaultMsg = `Hi ${businessDisplayName}, I'd like to know more about your services.`
-    setMessages((prev) => [
-      ...prev,
-      { id: Date.now(), from: 'user', text: defaultMsg },
-      { id: Date.now() + 1, from: 'bot', text: chatAutoReply },
-    ])
-    setTimeout(() => {
-      window.open(getWhatsAppUrl(defaultMsg), '_blank', 'noopener,noreferrer')
-    }, 600)
   }
 
   return (
@@ -109,18 +97,6 @@ export default function FloatingChatbot() {
                 </div>
               ))}
               <div ref={messagesEndRef} />
-            </div>
-
-            {/* Quick action */}
-            <div className="border-t border-slate-100 bg-white px-4 py-2">
-              <button
-                type="button"
-                onClick={handleQuickWhatsApp}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366]/10 px-3 py-2 text-xs font-semibold text-[#128C7E] transition-colors hover:bg-[#25D366]/20"
-              >
-                <Phone size={14} />
-                Chat on WhatsApp directly
-              </button>
             </div>
 
             {/* Input */}
