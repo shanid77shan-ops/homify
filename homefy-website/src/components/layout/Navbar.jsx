@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { navLinks, getWhatsAppUrl } from '../../data/content'
+import { businessDisplayName, navLinks, getWhatsAppUrl } from '../../data/content'
 import Button from '../ui/Button'
 import Logo from '../ui/Logo'
 
@@ -52,7 +52,12 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden lg:block">
-          <Button href={getWhatsAppUrl()} variant="primary" target="_blank" rel="noopener noreferrer">
+          <Button
+            href={getWhatsAppUrl(`Hi ${businessDisplayName}, I'd like to get a free consultation.`)}
+            variant="primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Get a Free Consultation
           </Button>
         </div>
@@ -83,7 +88,7 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <Button
-                href={getWhatsAppUrl()}
+                href={getWhatsAppUrl(`Hi ${businessDisplayName}, I'd like to get a free consultation.`)}
                 variant="primary"
                 className="w-full"
                 target="_blank"

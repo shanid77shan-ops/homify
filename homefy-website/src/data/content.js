@@ -152,7 +152,8 @@ export const businessDisplayName = 'Team HOMEFY'
 export const chatAutoReply = `Thanks for reaching out to ${businessDisplayName}. We have received your message and will connect you with a team member shortly.`
 
 export function getWhatsAppUrl(message) {
-  const defaultMessage = `Hi ${businessDisplayName}, I'd like to get a free consultation.`
-  const text = message?.trim() || defaultMessage
-  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`
+  if (message?.trim()) {
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message.trim())}`
+  }
+  return `https://wa.me/${whatsappNumber}`
 }

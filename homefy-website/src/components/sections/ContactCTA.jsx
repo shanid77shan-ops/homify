@@ -1,10 +1,12 @@
 import { Phone, MessageCircle } from 'lucide-react'
-import { contactPhones, getWhatsAppUrl } from '../../data/content'
+import { businessDisplayName, contactPhones, getWhatsAppUrl } from '../../data/content'
 import MotionWrapper from '../ui/MotionWrapper'
 import Button from '../ui/Button'
 
 export default function ContactCTA() {
-  const consultationUrl = getWhatsAppUrl()
+  const consultationUrl = getWhatsAppUrl(
+    `Hi ${businessDisplayName}, I'd like to get a free consultation.`,
+  )
 
   return (
     <section className="section-padding bg-gradient-to-br from-brand-orange to-brand-orange-dark">
