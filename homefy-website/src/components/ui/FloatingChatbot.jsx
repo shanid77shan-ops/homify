@@ -7,7 +7,7 @@ import {
   getWhatsAppUrl,
 } from '../../data/content'
 
-const welcomeMessage = `Hi! 👋 Welcome to ${businessDisplayName}. How can we help you today? Send us a message and we'll connect you on WhatsApp.`
+const welcomeMessage = `Hi! 👋 Welcome to ${businessDisplayName}. Type your message below and tap send — we'll open WhatsApp with your message ready to deliver to our team.`
 
 export default function FloatingChatbot() {
   const [open, setOpen] = useState(false)
@@ -22,21 +22,33 @@ export default function FloatingChatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, open])
 
+  const openWhatsApp = (message) => {
+    const url = getWhatsAppUrl(message)
+    const link = document.createElement('a')
+    link.href = url
+    link.target = '_blank'
+    link.rel = 'noopener noreferrer'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const handleSend = () => {
     const trimmed = input.trim()
     if (!trimmed || sending) return
 
     setSending(true)
-    const userMessage = { id: Date.now(), from: 'user', text: trimmed }
-    const botReply = { id: Date.now() + 1, from: 'bot', text: chatAutoReply }
-
-    setMessages((prev) => [...prev, userMessage, botReply])
     setInput('')
 
-    setTimeout(() => {
-      window.open(getWhatsAppUrl(trimmed), '_blank', 'noopener,noreferrer')
-      setSending(false)
-    }, 800)
+    // Open WhatsApp immediately on click (avoids popup blockers)
+    openWhatsApp(trimmed)
+
+    // Only show auto-reply in the chat — message goes to WhatsApp, not duplicated here
+    setMessages((prev) => [
+      ...prev,
+      { id: Date.now(), from: 'bot', text: chatAutoReply },
+    ])
+    setSending(false)
   }
 
   const handleKeyDown = (e) => {
