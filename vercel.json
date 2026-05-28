@@ -1,0 +1,7 @@
+{
+  "framework": "vite",
+  "installCommand": "cd homefy-website && npm install",
+  "buildCommand": "cd homefy-website && npm run build",
+  "outputDirectory": "homefy-website/dist"
+}
+
